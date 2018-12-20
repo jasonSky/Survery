@@ -13,7 +13,7 @@ SurveySystem
 ![](img/3.png)
 
 
-新建db:survey
+1. 新建db:survey
 执行source sql文件恢复库表
 
 2. 编译src下源码到web-inf class下
