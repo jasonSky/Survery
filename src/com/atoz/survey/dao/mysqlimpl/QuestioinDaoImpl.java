@@ -9,6 +9,7 @@ import com.atoz.survey.po.Question;
 
 public class QuestioinDaoImpl extends BaseDao implements QuestionDao {
 
+	@Override
 	public List<Question> findQuestionsByPaperId(int paperId) {
 		// TODO Auto-generated method stub
 		List<Question> questions = new ArrayList<Question>();
@@ -34,6 +35,7 @@ public class QuestioinDaoImpl extends BaseDao implements QuestionDao {
 		return questions;
 	}
 
+	@Override
 	public List<Question> showResultByPaperId(int paperId) {
 		// TODO Auto-generated method stub
 		
@@ -60,6 +62,7 @@ public class QuestioinDaoImpl extends BaseDao implements QuestionDao {
 		return questions;
 	}
 
+	@Override
 	public int addQuestions(Question question) {
 		// TODO Auto-generated method stub
 		getConn();
@@ -70,6 +73,7 @@ public class QuestioinDaoImpl extends BaseDao implements QuestionDao {
 		return result;
 	}
 
+	@Override
 	public int updateQuestions(int questionId,String qstAnswer) {
 		// TODO Auto-generated method stub
 		getConn();
@@ -79,6 +83,7 @@ public class QuestioinDaoImpl extends BaseDao implements QuestionDao {
 		return result;
 	}
 
+	@Override
 	public int deleteQusetionByQuestionId(int questionId) {
 		// TODO Auto-generated method stub
 		getConn();
@@ -88,20 +93,16 @@ public class QuestioinDaoImpl extends BaseDao implements QuestionDao {
 		return result;
 	}
 
-	public String findQstAnswerByPaperId(int paperId) {
+	@Override
+	public List<String> findQstAnswerByPaperId(int paperId) {
 		// TODO Auto-generated method stub
-		String string="";
-		getConn();
-		String sql = "select qstAnswer from Questions where paperId = ?";
-		doQuery(sql, paperId);
-		try {
-			while(rs.next()){
-				string += rs.getString(1);
-			}
-		} catch (SQLException e) {
-			// TODO: handle exception
-		}
-		closeAll();
-		return string;
+		return null;
 	}
+
+	@Override
+	public int deleteQusetionByPaperId(int paperId) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

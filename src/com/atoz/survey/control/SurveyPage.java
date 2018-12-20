@@ -1,20 +1,19 @@
 package com.atoz.survey.control;
 
 import java.io.IOException;
-import java.util.List;
 
-import javax.jms.Session;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.atoz.survey.dao.mysqlimpl.QuestionDaoImpl;
-import com.atoz.survey.po.Question;
-import com.sun.org.apache.bcel.internal.generic.NEW;
-
 public class SurveyPage extends HttpServlet {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Constructor of the object.

@@ -14,7 +14,6 @@ import com.atoz.survey.dao.PaperDao;
 import com.atoz.survey.dao.mysqlimpl.PaperDaoImpl;
 import com.atoz.survey.po.Paper;
 import com.atoz.survey.po.User;
-import com.sun.org.apache.bcel.internal.generic.NEW;
 
 public class AddPaper extends HttpServlet {
 
