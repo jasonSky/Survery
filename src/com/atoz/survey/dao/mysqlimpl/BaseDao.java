@@ -32,7 +32,7 @@ public class BaseDao {
 	 * Connect Database
 	 */
 	public void getConn() {
-		String url = "jdbc:mysql://localhost:3309/survery?user=root&password=!QAZ2wsx&useUnicode=true&characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false";
+		String url = "jdbc:mysql://45.78.43.205:3309/survery?user=root&password=!QAZ2wsx&useUnicode=true&characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false";
 		try {
 			conn = DriverManager.getConnection(url);
 		} catch (Exception e) {
@@ -130,7 +130,7 @@ public class BaseDao {
 		} else {
 			sql = "CREATE TABLE Users(userId INT PRIMARY KEY AUTO_INCREMENT, userName NVARCHAR(40), userPassword NVARCHAR(40), userIcon NVARCHAR(40), userMail NVARCHAR(40), userReg DATETIME, userSex int, userRole int)";
 			doOperate(sql);
-			sql = "INSERT INTO Users VALUES(NULL, 'admin', 'admin', 'admin.png', 'admin@singlex.net', '2012-12-12 12:12:12', '1', '0')";
+			sql = "INSERT INTO Users VALUES(1,'admin', 'admin', 'admin.png', 'admin@singlex.net', '2012-12-12 12:12:12', '1', '0')";
 			doOperate(sql);
 		}
 		// Init Table "Papers"
@@ -140,7 +140,7 @@ public class BaseDao {
 		} else {
 			sql = "CREATE TABLE Papers(paperId INT PRIMARY KEY AUTO_INCREMENT, userId INT, userName NVARCHAR(40), paperTitle NVARCHAR(100), paperSummary NVARCHAR(300), paperStartDate DATETIME, paperEndDate DATETIME, paperBg NVARCHAR(40), paperType INT, paperStatus INT, paperCount INT)";
 			doOperate(sql);
-			sql = "INSERT INTO Papers VALUES(NULL, '1', '0', 'admin', 'Test paper', 'This is a test paper! Enjoy it!', '2013-05-01 12:00:00', '2013-05-10 12:00:00', 'bg_01.png', '1', '1', '99')";
+			sql = "INSERT INTO Papers VALUES(1,1, 'admin', 'Test paper', 'This is a test paper! Enjoy it!', '2013-05-01 12:00:00', '2013-05-10 12:00:00', 'bg_01.png', '1', '1', '99')";
 			doOperate(sql);
 		}
 		// Init Table "Questions"
@@ -150,8 +150,13 @@ public class BaseDao {
 		} else {
 			sql = "CREATE TABLE Questions(qstId INT PRIMARY KEY AUTO_INCREMENT, paperId INT, qstType INT, qstTile NVARCHAR(100), qstOption NVARCHAR(1000), qstAnswer NVARCHAR(1000))";
 			doOperate(sql);
-			sql = "INSERT INTO Questions VALUES(NULL, '1', '1', 'First Question', 'A:刘红军;B:李朋伟 ;C:袁佑 ;D:郭宝星', '4;2;3;2')";
+			sql = "INSERT INTO Questions VALUES(1,1, 1, 'First Question', 'A:刘红军;B:李朋伟 ;C:袁佑 ;D:郭宝星', '4;2;3;2')";
 			doOperate(sql);
 		}
+	}
+	
+	public static void main(String argsp[]){
+		BaseDao bd = new BaseDao();
+		bd.doInit();
 	}
 }

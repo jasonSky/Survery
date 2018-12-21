@@ -13,13 +13,15 @@ SurveySystem
 ![](img/3.png)
 
 
-1. 新建db:survey
-执行source sql文件恢复库表
+1. 新建db:survery
+运行baseBao里面的main方法 来创建数据库及init数据
+或者使用sql 来source下即可
+
 
 2. 编译src下源码到web-inf class下
 eclipse导入后将tomcat下的servlet-api.jar应用
 修改src编译完后的路径到WEB-INF下
 
 3. 将webroot拷贝到webapps下部署
-
+tomcat lib目录需要放入mysql-connector-java-5.1.7-bin.jar用于数据库连接
 
