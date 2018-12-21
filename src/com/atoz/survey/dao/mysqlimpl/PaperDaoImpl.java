@@ -128,7 +128,7 @@ public class PaperDaoImpl extends BaseDao implements PaperDao {
 	public int addPapers(Paper paper) {
 		// TODO Auto-generated method stub
 		getConn();
-		String sql = "insert into Papers values (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		String sql = "insert into Papers(userId,paperTitle,paperSummary,paperStartDate,paperEndDate,paperBg,paperType,paperStatus,paperCount) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		doOperate(sql, paper.getUserId(), paper.getPaperTitle(), paper.getPaperSummary(), paper.getPaperStartDate(), paper.getPaperEndDate(), paper.getPaperBg(), paper.getPaperType(), paper.getPaperStatus(), paper.getPaperCount());
 		closeAll();
 

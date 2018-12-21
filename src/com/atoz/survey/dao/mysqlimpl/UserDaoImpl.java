@@ -87,7 +87,7 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 	public int addUsers(User user) {
 		// TODO Auto-generated method stub
 		getConn();
-		String sql = "INSERT INTO Users VALUES(NULL, ?, ?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO Users(userName,userPassword,userIcon,userMail,userReg,userSex,userRole) VALUES( ?, ?, ?, ?, ?, ?, ?)";
 		doOperate(sql, user.getUserName(), user.getUserPassword(), user.getUserIcon(), user.getUserMail(), user.getUserReg(), user.getUserSex(), user.getUserRole());
 		closeAll();
 		return 0;

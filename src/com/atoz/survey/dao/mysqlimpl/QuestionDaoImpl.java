@@ -63,7 +63,7 @@ public class QuestionDaoImpl extends BaseDao implements QuestionDao {
 	public int addQuestions(Question question) {
 		// TODO Auto-generated method stub
 		getConn();
-		String sql = "insert into Questions values(NULL,?, ?, ?, ?,?)";
+		String sql = "insert into Questions(paperId,qstType,qstTitle,qstOption,qstAnswer) values(?, ?, ?, ?,?)";
 		doOperate(sql, question.getPaperId(), question.getQstType(), question.getQstTitle(), question.getQstOption(), question.getQstAnswer());
 		closeAll();
 		return result;
