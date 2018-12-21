@@ -140,7 +140,7 @@ body {
 
 
 		<div class="mastfoot">
-			<label>wo de ai wei wo suo you</label>
+			<label>版权所有 @2018 Jason</label>
 
 		</div>
 	</div>

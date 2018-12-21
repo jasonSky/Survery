@@ -25,7 +25,6 @@ DROP TABLE IF EXISTS `Papers`;
 CREATE TABLE `Papers` (
   `paperId` int(11) NOT NULL AUTO_INCREMENT,
   `userId` int(11) DEFAULT NULL,
-  `userName` varchar(40) DEFAULT NULL,
   `paperTitle` varchar(100) DEFAULT NULL,
   `paperSummary` varchar(300) DEFAULT NULL,
   `paperStartDate` datetime DEFAULT NULL,
@@ -35,7 +34,7 @@ CREATE TABLE `Papers` (
   `paperStatus` int(11) DEFAULT NULL,
   `paperCount` int(11) DEFAULT NULL,
   PRIMARY KEY (`paperId`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +43,7 @@ CREATE TABLE `Papers` (
 
 LOCK TABLES `Papers` WRITE;
 /*!40000 ALTER TABLE `Papers` DISABLE KEYS */;
-INSERT INTO `Papers` VALUES (1,1,'admin','Test paper','This is a test paper! Enjoy it!','2013-05-01 12:00:00','2013-05-10 12:00:00','bg_01.png',1,1,99);
+INSERT INTO `Papers` VALUES (1,1,'Test paper','This is a test paper! Enjoy it!','2013-05-01 12:00:00','2013-05-10 12:00:00','bg_01.png',1,1,99),(2,3,'test','test','2018-12-20 21:54:00','2019-01-19 21:54:00','img/06.jpg',2,0,0),(3,3,'test','test','2018-12-20 22:07:50','2019-01-19 22:07:50','img/06.jpg',1,0,0);
 /*!40000 ALTER TABLE `Papers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -63,7 +62,7 @@ CREATE TABLE `Questions` (
   `qstOption` varchar(1000) DEFAULT NULL,
   `qstAnswer` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`qstId`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -72,7 +71,7 @@ CREATE TABLE `Questions` (
 
 LOCK TABLES `Questions` WRITE;
 /*!40000 ALTER TABLE `Questions` DISABLE KEYS */;
-INSERT INTO `Questions` VALUES (1,1,1,'First Question','A:刘红军;B:李朋伟 ;C:袁佑 ;D:郭宝星','4;2;3;2');
+INSERT INTO `Questions` VALUES (1,1,1,'First Question','A:刘红军;B:李朋伟 ;C:袁佑 ;D:郭宝星','4;2;3;2'),(2,2,1,'test','a#b#c#d','0&0&0&0'),(3,3,1,'test1','a#b#c#d','0&0&0&0'),(4,3,1,'testqqq','江#河#湖#海','0&0&0&0');
 /*!40000 ALTER TABLE `Questions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -93,7 +92,7 @@ CREATE TABLE `Users` (
   `userSex` int(11) DEFAULT NULL,
   `userRole` int(11) DEFAULT NULL,
   PRIMARY KEY (`userId`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -102,7 +101,7 @@ CREATE TABLE `Users` (
 
 LOCK TABLES `Users` WRITE;
 /*!40000 ALTER TABLE `Users` DISABLE KEYS */;
-INSERT INTO `Users` VALUES (1,'admin','admin','admin.png','admin@singlex.net','2012-12-12 12:12:12',1,0);
+INSERT INTO `Users` VALUES (1,'admin','admin','admin.png','admin@singlex.net','2012-12-12 12:12:12',1,0),(3,'jason','jason','default_icon.png','ssssssss@ss','2018-12-20 21:44:23',1,1);
 /*!40000 ALTER TABLE `Users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -115,4 +114,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-20 20:52:00
+-- Dump completed on 2018-12-20 22:33:40

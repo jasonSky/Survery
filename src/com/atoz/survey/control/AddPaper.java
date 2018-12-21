@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import com.atoz.survey.dao.PaperDao;
 import com.atoz.survey.dao.mysqlimpl.PaperDaoImpl;
+import com.atoz.survey.dao.mysqlimpl.UserDaoImpl;
+import com.atoz.survey.po.Login;
 import com.atoz.survey.po.Paper;
 import com.atoz.survey.po.User;
 
@@ -70,7 +72,8 @@ public class AddPaper extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		
-		User user = (User) session.getAttribute("userInfo");
+		Login login = (Login) session.getAttribute("loginInfo");
+		User user = new UserDaoImpl().findUserByUserName(login.getUserName());
 		int userId = user.getUserId();
 
 		paper.setUserId(userId);

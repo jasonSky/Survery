@@ -75,8 +75,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="container">
   	<div class="masthead">
   		<ul class="nav nav-pills pull-right">
-  			<li><a href="#myMadel"  role="button" class="btn" data-toggle="modal"> 登陆</a></li>
-  			<li><a href="#"  class="btn" data-toggle="modal"> 注册</a></li>
+  			<li><a href="#myMadel"  role="button" class="btn" data-toggle="modal"> ç»é</a></li>
+  			<li><a href="#"  class="btn" data-toggle="modal"> æ³¨å</a></li>
   		</ul>
   		<h1>iwen</h1>
   	</div>
@@ -110,7 +110,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   			%>
   			<label class="radio">
 		  	<input type="radio" name=<%=ss %> id=<%=ss %> value="1">
-		  	A、<%=option %>
+		  	Aã<%=option %>
 		  	</label>
   			
   		<% 
@@ -124,14 +124,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   		}
   		i++;
   	 } %>
-  	<input class="btn btn-sucess" type="submit" value="1" onClick="document.form1.action='sucess.jsp';">发布
-  	<input class="btn btn-danger" type="reset" value="重置">
+  	<input class="btn btn-sucess" type="submit" value="1" onClick="document.form1.action='sucess.jsp';">åå¸
+  	<input class="btn btn-danger" type="reset" value="éç½®">
   	
   	</form>
   	</div>
   	
   	<div class="mastfoot">
-  	  <label>wo de ai wei wo suo you</label>
+  	 <label>版权所有 @2018 Jason</label>
   	
   	</div>
   	</div>

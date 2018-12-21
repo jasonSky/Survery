@@ -12,6 +12,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.atoz.survey.po.Login;
+
 public class BaseDao {
 	protected Connection conn;
 	protected PreparedStatement pstmt;
@@ -138,7 +140,7 @@ public class BaseDao {
 			sql = "DROP TABLE Papers";
 			doOperate(sql);
 		} else {
-			sql = "CREATE TABLE Papers(paperId INT PRIMARY KEY AUTO_INCREMENT, userId INT, userName NVARCHAR(40), paperTitle NVARCHAR(100), paperSummary NVARCHAR(300), paperStartDate DATETIME, paperEndDate DATETIME, paperBg NVARCHAR(40), paperType INT, paperStatus INT, paperCount INT)";
+			sql = "CREATE TABLE Papers(paperId INT PRIMARY KEY AUTO_INCREMENT, userId INT, paperTitle NVARCHAR(100), paperSummary NVARCHAR(300), paperStartDate DATETIME, paperEndDate DATETIME, paperBg NVARCHAR(40), paperType INT, paperStatus INT, paperCount INT)";
 			doOperate(sql);
 			sql = "INSERT INTO Papers VALUES(1,1, 'admin', 'Test paper', 'This is a test paper! Enjoy it!', '2013-05-01 12:00:00', '2013-05-10 12:00:00', 'bg_01.png', '1', '1', '99')";
 			doOperate(sql);
@@ -156,7 +158,10 @@ public class BaseDao {
 	}
 	
 	public static void main(String argsp[]){
-		BaseDao bd = new BaseDao();
-		bd.doInit();
+		//BaseDao bd = new BaseDao();
+		//bd.doInit();
+		Login log = new LoginDaoImpl().loginInfo("admin", "admin");
+		System.out.println(log.getUserName());
+		System.out.println(log.getUserPassword());
 	}
 }

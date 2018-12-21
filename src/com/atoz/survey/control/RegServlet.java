@@ -59,8 +59,7 @@ public class RegServlet extends HttpServlet {
 		String userEmail = request.getParameter("inputEmail");
 
 		Date now = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance();
-		String datetime = dateFormat.format(now);
+		String datetime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(now);
 
 		UserService userService = new UserServiceImpl();
 		if (userService.findUserByUserName(userName) == null) {
